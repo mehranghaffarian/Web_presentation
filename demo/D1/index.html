@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Performance</title>
+</head>
+
+<body>
+    <p>Calculate N-th Fibonacci Number</p>
+
+    <script>
+        var exports;
+        WebAssembly.instantiateStreaming(fetch("fibo.wasm"), {})
+            .then(results => exports = results.instance.exports)
+
+        function calcFiboJS(n) {
+            if (n == 1 || n == 0){
+                return 1
+            }
+            return calcFiboJS(n-1) + calcFiboJS(n-2)
+        }
+
+        function calcFiboWasm(num) {
+            return exports.get_fib(num);
+        }
+
+        function calculateFibonacci() {
+            const num = document.querySelector("#a").value;
+            console.time("Execution Time JS");
+            const sumOfEntries = calcFiboJS(num);
+            console.timeEnd("Execution Time JS");
+            console.log(`result: ${sumOfEntries}`);
+
+            console.time("Execution Time WASM");
+            const sumOfEntries2 = calcFiboWasm(num);
+            console.timeEnd("Execution Time WASM");
+            console.log(`result: ${sumOfEntries2}`);
+            console.log("---");
+        }
+
+    </script>
+    <input type="number" id="a">
+    <button onclick="calculateFibonacci()">Trigger</button>
+    <p id="ret"></p>
+</body>
+
+</html>
