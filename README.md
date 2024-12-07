@@ -1,6 +1,6 @@
 # WebAssembly Presentation and Demo
 
-This repository contains resources from our presentation on **WebAssembly**, including the **PowerPoint slides** and a **practical demo** provided by **[Pouri](presentation-slides.pptx)**.
+This repository contains resources from our presentation on **WebAssembly**, including the **PowerPoint slides** and a **practical demo** provided by **[Pouria](https://github.com/Pouria-EsH)**.
 
 ## Overview
 
@@ -9,4 +9,4 @@ WebAssembly (Wasm) is a portable, low-level binary instruction format designed t
 ### Contents
 
 - **Presentation Slides:** Covers the basics of WebAssembly, its use cases, and its potential impact on modern web development.
-- **Demo:** A hands-on demonstration provided by **[Pouri](presentation-slides.pptx)** showcasing a practical implementation of WebAssembly in action.
+- **Demo:** A hands-on demonstration provided by **[Pouria](https://github.com/Pouria-EsH)** showcasing a practical implementation of WebAssembly in action.
